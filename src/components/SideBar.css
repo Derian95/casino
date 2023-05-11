@@ -106,3 +106,18 @@ transform: rotate(90deg);
     background: linear-gradient(342deg, rgba(177,211,255,1) 0%, rgba(0,104,255,1) 45%);
     color: #f3f2ee;
 }
+
+/* @media (max-width: 550px) {
+  .aside{
+    flex-direction: column;
+    width: calc(95% - 96px);
+  }
+  .aside-contain{
+    flex-direction: row;
+    width: 100%;
+    height: 26px;
+  }
+  .logo{
+    transform: rotate(180deg) !important;
+  }
+} */

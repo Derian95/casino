@@ -71,7 +71,7 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(4, 6, 22, 0.7);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .content {
@@ -96,7 +96,7 @@ body{
 }
 
 .test {
-  font-size: 2rem;
+  font-size: 2em;
   font-weight: bold;
   background-image: radial-gradient(circle,#adf6bd 0,#357bf0 40%); 
   -webkit-background-clip: text; 
