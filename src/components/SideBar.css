@@ -1,0 +1,108 @@
+.aside{
+    position: fixed;
+    transition:all .5s cubic-bezier(.86,0,.07,1),background-color .3s;
+    z-index: 11;
+    right: 48px;
+    top: 48px;
+    height: calc(95% - 96px);
+    display: flex;
+
+}
+.aside-contain{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    margin-right: 15px;
+    padding: 32px 5px;
+    border-radius: 5px;
+    background-color: hsla(0,0%,100%,.05);
+    width: 96px;
+
+}
+.aside-contain p{
+    color: white;
+
+}
+.aside-option{
+font-size: 30px;
+color: white;
+font-weight: bold;
+transform: rotate(90deg);
+
+}
+
+
+.menu{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    padding: 32px 45px;
+    border-radius: 5px;
+    background-color: hsla(0,0%,100%,.05);
+    backdrop-filter: blur(15px);
+    width: 250px;
+}
+
+
+.show{
+    transform: translateX(0);
+}
+.hide{
+    transform: translateX(390px);
+    
+}
+.contain-btn{
+    position: relative;
+    height: 64px;
+    width: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-open-menu{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: all .5s ease;
+    position: absolute;
+}
+.button-open-menu:hover{
+    height: 64px;
+    width: 64px;
+    background: rgb(177,211,255);
+    background: linear-gradient(342deg, rgba(177,211,255,1) 0%, rgba(0,104,255,1) 45%);
+}
+
+.icon-button{
+    color: rgb(57, 103, 255) !important;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.option{
+   padding: 10px 25px;
+   background-color: #f3f2ee;
+   border-radius: 45px;
+   color: rgb(57, 103, 255);
+   margin-bottom: 10px;
+   text-align: center;
+   font-weight: bold;
+   font-size: .75em;
+}
+
+.option:hover{
+    background: rgb(177,211,255);
+    background: linear-gradient(342deg, rgba(177,211,255,1) 0%, rgba(0,104,255,1) 45%);
+    color: #f3f2ee;
+}
