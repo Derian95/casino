@@ -11,6 +11,7 @@ export const SideBar = () => {
 		setShowMenu((prev) => !prev)
 	}
 
+	
 	return (
 		<aside className={`aside ${showMenu ? 'show' : 'hide'}`}>
 			<div className='aside-contain'>
@@ -22,6 +23,7 @@ export const SideBar = () => {
 					</div>
 				</div>
 			</div>
+			
 			<div className='menu'>
 				<div>
 					<p
@@ -37,45 +39,20 @@ export const SideBar = () => {
 					<div>
 						<ol>
 							<ul className='option'>
-								<Link
-									activeClass='active'
-									to='inicio'
-									spy={true}
-									smooth={true}
-									offset={-70}
-									duration={500}>
-									INICIO
-								</Link>
+							<a href="#inicio" >INICIO</a>
+								
 							</ul>
-							<ul className='option'><Link
-									activeClass='active'
-									to='nosotros'
-									spy={true}
-									smooth={true}
-									offset={-70}
-									duration={500}>
-									SOBRE NOSOTROS
-								</Link></ul>
 							<ul className='option'>
-                            <Link
-									activeClass='active'
-									to='juegos'
-									spy={true}
-									smooth={true}
-									offset={-70}
-									duration={500}>
-									JUEGOS
-								</Link>
+							<a href="#nosotros" >NOSOTROS</a>
+								</ul>
+							<ul className='option'>
+							<a href="#juegos" >JUEGOS</a>
+                            
                             </ul>
-							<ul className='option'><Link
-									activeClass='active'
-									to='contacto'
-									spy={true}
-									smooth={true}
-									offset={-70}
-									duration={500}>
-									CONTACTO
-								</Link></ul>
+							<ul className='option'>
+							<a href="#contacto" >CONTACTO</a>
+
+							</ul>
 						</ol>
 					</div>
 				</div>
