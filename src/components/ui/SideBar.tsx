@@ -2,7 +2,6 @@ import { useState } from 'react'
 import '../SideBar.css'
 import logoExcalibur from '../../assets/excalibur.png'
 import nombreSala from '../../assets/excalibur.svg'
-import { Link } from 'react-scroll'
 
 export const SideBar = () => {
 	const [showMenu, setShowMenu] = useState(false)
