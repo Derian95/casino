@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import { ListAnunt } from '../components/pages/anunciament/ListAnunt'
+// import { useState } from 'react'
+// import { ListAnunt } from '../components/pages/anunciament/ListAnunt'
 import { VideoBackGround } from '../components/pages/home/VideoBackGround'
 import { SideBar2 } from '../components/ui/SideBar2'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { motion } from 'framer-motion'
 
 export const Text3 = () => {
-	const [open, setOpen] = useState(false)
+	// const [open, setOpen] = useState(false)
 
-	const openModal = () => {
-		setOpen((prev) => !prev)
-		console.log(open)
-	}
+	// const openModal = () => {
+	// 	setOpen((prev) => !prev)
+	// 	console.log(open)
+	// }
 
 	return (
 		<div>
