@@ -8,6 +8,7 @@
     display: flex;
 
 }
+
 .aside-contain{
     display: flex;
     justify-content: space-between;
@@ -54,7 +55,7 @@ transform: rotate(90deg);
     transform: translateX(0);
 }
 .hide{
-    transform: translateX(390px);
+    transform: translateX(290px);
     
 }
 .contain-btn{
@@ -128,3 +129,18 @@ a{
     transform: rotate(180deg) !important;
   }
 } */
+
+.divC{
+    background-color:#191919;
+    height:100vh;
+     min-width:100vw;
+     transition: all 4s ease;
+}
+
+.be{
+   background-color: orange;
+}
+.ba{
+    background-color: rebeccapurple;
+
+}

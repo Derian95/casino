@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+//import App from './App.tsx'
 import './index.css'
+import { Loader } from './components/ui/Loader.tsx'
+import { Text3 } from './pruebas/Text3.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+      {/* <App/> */}
+      <Loader/>
+      <Text3/>
+
   </React.StrictMode>,
 )
