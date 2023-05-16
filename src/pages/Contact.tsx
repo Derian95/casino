@@ -8,7 +8,7 @@ export const Contact = () => {
 
             <p>Escribanos ra de rasssasas</p>
             <form action="" className="flex flex-col gap-y-2 w-3/4  ">
-                <input type="text" placeholder="Nombre" className="  h-14 bg-slate-600 outline-none"/>
+                <input type="text" placeholder="Nombre" className="after:  h-14 bg-slate-600 outline-none"/>
                 <input type="text" placeholder="Apellidos" className="  h-14 bg-slate-600 outline-none"/>
                 <input type="text" placeholder="Asunto" className="  h-14 bg-slate-600 outline-none"/>
                 <textarea className="ra h-24 bg-slate-600"/>
