@@ -18,7 +18,7 @@ export const Text3 = () => {
 			<div className='w-screen  '>
 				<SideBar2 />
 				<div className='w-full h-auto'>
-					<Parallax pages={6} horizontal>
+					<Parallax pages={6}>
 						<ParallaxLayer
 							offset={0}
 							speed={0.5}
@@ -121,7 +121,22 @@ export const Text3 = () => {
 					</Parallax>
 				</div>
 			</div>
-			
+			<div className='relative pt-[100%]'>
+			<div
+				className={`fixed w-screen h-screen   bg-red-500 z-20 ${
+					open ? 'translate-y-0' : 'translate-y-[100%]'
+				} transition-all duration-200 ease-linear `}>
+				<div
+					className={`fixed w-screen h-screen   bg-blue-500 z-20 ${
+						open ? 'translate-y-0' : 'translate-y-[100%]'
+					} transition-all duration-200 ease-in-out delay-500`}
+					onClick={openModal}></div>
+			</div>
+			<ListAnunt />
+			<button onClick={openModal} className='bg-blue-700'>
+				open
+			</button>
+			</div>
 		</div>
 	)
 }
