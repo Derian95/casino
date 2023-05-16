@@ -3,16 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+html{
+    padding: 0;
+    margin: 0;
+}
 body{
-    background-color: #03030F;
+    background: #FF0000; /* Fallback for older browsers */
+    background: -webkit-linear-gradient(to right, #2e1515, #0a0a30); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #110b0b, #0f0f13); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
 }
 
 *{
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    
 }
 
 .sidebar-container a{
@@ -35,4 +40,14 @@ body{
 
 .sidebar-container a:hover{
 color: red;
+}
+
+.ra::after{
+width: 100px;
+height: 10px;
+background-color: rebeccapurple;
+}
+
+input:hover + input::after{
+    width: 100%;
 }

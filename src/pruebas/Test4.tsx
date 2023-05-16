@@ -8,7 +8,7 @@ export const Test4 = () => {
 	const containerRef = useRef(null)
 	const { scrollYProgress } = useScroll({
 		target: containerRef,
-		offset: ['start end', 'end end'],
+		offset: ['start end', 'end start'],
 	})
 	// const bottomShadowValue = useTransform(
 	// 	scrollYProgress,
@@ -17,7 +17,10 @@ export const Test4 = () => {
 	// )
 	// const imageValue = useTransform(scrollYProgress, [0, 1], ['-100%', '0%'])
 	const topShadowValue = useTransform(scrollYProgress, [0, 1], ['-20%', '20%'])
-
+	const topShadowValue2 = useTransform(scrollYProgress, [0, .5,1], ['20%', '-20%','20%'])
+	const shadow  = useTransform(scrollYProgress, [0, 1], [0, 1]) ;
+	
+console.log(shadow)
 	const [open, setOpen] = useState(false)
 
 	const openModal = () => {
@@ -25,10 +28,12 @@ export const Test4 = () => {
 		console.log(open)
 	}
 	return (
-		<div>
+		<div 
+		// className='bg-gradient-to-tl from-[#0050fc] to-zinc-950'
+		>
 			<SideBar2 />
-			<div className=' w-screen'>
-				<div className=' sm:pl-[68px] h-screen  absolute flex items-center z-10 '>
+			<div className=' w-screen '>
+				<div className=' sm:pl-[68px] h-screen  absolute flex items-center z-10  '>
 					<div className='h-1/4 w-auto  pl-10 flex flex-col  justify-between'>
 						<h1 className='salaName sm:text-5xl md:text-6xl lg:text-7xl text-4xl font-black text-white opacity-0 translate-y-10'>
 							NOMBRE SALA
@@ -58,7 +63,7 @@ export const Test4 = () => {
 						nostrum esse adipisci quaerat labore dignissimos vero sint?
 					</p>
 				</motion.div>
-				<div className='flex flex-col items-center mb-10'>
+				<motion.div initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}} transition={{duration:2}} className='flex flex-col items-center mb-10  ' style={{translateX:topShadowValue2 }}>
 					<p className='text-5xl text-white font-black'>MISION</p>
 					<p className='text-white max-w-3xl text-lg text-justify'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
@@ -72,8 +77,8 @@ export const Test4 = () => {
 						dolor doloremque eos quisquam officia, unde alias quibusdam mollitia
 						nostrum esse adipisci quaerat labore dignissimos vero sint?
 					</p>
-				</div>
-				<div className='flex flex-col items-center mb-10'>
+				</motion.div>
+				<motion.div className='flex flex-col items-center mb-10' style={{opacity:shadow}}>
 					<p className='text-5xl text-white font-black'>VISION</p>
 					<p className='text-white max-w-3xl text-lg text-justify'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
@@ -87,25 +92,10 @@ export const Test4 = () => {
 						dolor doloremque eos quisquam officia, unde alias quibusdam mollitia
 						nostrum esse adipisci quaerat labore dignissimos vero sint?
 					</p>
-				</div>
+				</motion.div>
 			</div>
 
-			<div className='relative sm:pl-[68px]'>
-				<ListAnunt />
-				<div
-					className={`fixed w-screen h-screen top-0  bg-red-500 z-90 ${
-						open ? 'translate-y-0' : 'translate-y-[100%]'
-					} transition-all duration-200 ease-linear `}>
-					<div
-						className={`fixed w-screen h-screen   bg-black z-20 ${
-							open ? 'translate-y-0' : 'translate-y-[100%]'
-						} transition-all duration-200 ease-in-out delay-500`}
-						onClick={openModal}></div>
-				</div>
-				<button onClick={openModal} className='bg-blue-700'>
-					open
-				</button>
-			</div>
+			
 
 			<div className='sm:pl-[68px] h-screen w-screen flex items-center justify-center'>
 				<div className='w-full md:w-96 md:max-w-full mx-auto'>
@@ -205,3 +195,21 @@ export const Test4 = () => {
 		</div>
 	)
 }
+
+
+/*<div className='relative sm:pl-[68px]'>
+				<ListAnunt />
+				<div
+					className={`fixed w-screen h-screen top-0  bg-red-500 z-90 ${
+						open ? 'translate-y-0' : 'translate-y-[100%]'
+					} transition-all duration-200 ease-linear `}>
+					<div
+						className={`fixed w-screen h-screen   bg-black z-20 ${
+							open ? 'translate-y-0' : 'translate-y-[100%]'
+						} transition-all duration-200 ease-in-out delay-500`}
+						onClick={openModal}></div>
+				</div>
+				<button onClick={openModal} className='bg-blue-700'>
+					open
+				</button>
+			</div> */
