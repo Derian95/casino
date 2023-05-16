@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client'
 //import App from './App.tsx'
 import './index.css'
 import { Loader } from './components/ui/Loader.tsx'
-import { Text3 } from './pruebas/Text3.tsx'
+// import { Text3 } from './pruebas/Text3.tsx'
+import { Test4 } from './pruebas/Test4.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
       {/* <App/> */}
       <Loader/>
-      <Text3/>
+      <Test4/>
 
   </React.StrictMode>,
 )

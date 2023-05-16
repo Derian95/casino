@@ -23,8 +23,8 @@ const letter = {
 
 export const SideBar2 = () => {
   return (
-    <motion.div variants={sentence} initial="hidden" animate="visible"  className="sidebar-container w-0 h-screen bg-black fixed opacity-0 z-20 flex justify-between flex-col">
-        <motion.a  variants={letter} href="#ra" >Contacto</motion.a>
+    <motion.div variants={sentence} initial="hidden" animate="visible"  className="sidebar-container  h-screen bg-black fixed opacity-0 z-20 flex justify-between flex-col -translate-x-full sm:translate-x-0  w-16  ">
+        <motion.a  variants={letter} href="#ra"  >Contacto</motion.a>
         <motion.a  variants={letter}>Contacto</motion.a>
         <motion.a  variants={letter}>Contacto</motion.a>
         <motion.a  variants={letter}>Contacto</motion.a>

@@ -6,7 +6,7 @@
 
 
 body{
-    background-color: black;
+    background-color: #03030F;
     
 }
 
@@ -25,7 +25,7 @@ body{
   justify-content: center;
   align-items: center;
   letter-spacing: 0.2rem;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 9px;
   text-transform: uppercase;
   color: #777676;

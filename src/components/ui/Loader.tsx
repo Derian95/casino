@@ -31,20 +31,20 @@ export const Loader = () => {
           })
           .to(".line", {
             height: "0%",
-            ease: Expo.easeInOut,
+            ease: Expo.easeIn,
             duration: 0.7,
             delay: 0.5,
           })
           .to(".containLoader", {
-            translateX: "-100%",
+            translateX: "100%",
             opacity:0,
-            ease: Expo.easeIn,
+            ease: Expo.easeInOut,
             duration: 0.7,
             delay: 0,
           })
           .to(".sidebar-container",{
             opacity:1,
-            width:"68px",
+            
             ease: Expo.easeIn,
             duration: 0.2,
             delay: 0,
@@ -53,7 +53,13 @@ export const Loader = () => {
             opacity:1,
             ease: Expo.easeIn,
             translateY:0,
-            duration: 0.2,
+            duration: .5,
+            delay: 0,
+          })
+          .to(".address",{
+            opacity:1,
+            ease: Expo.easeIn,
+            duration: .5,
             delay: 0,
           })
           
@@ -66,7 +72,7 @@ export const Loader = () => {
 
 
 	return (
-        <div className="containLoader fixed  loader-contain w-screen h-screen bg-black z-10 flex justify-center items-center "  >
+        <div className="containLoader fixed  loader-contain w-screen h-screen bg-black z-50 flex justify-center items-center "  >
             <div className="line absolute h-2 w-0  bg-red-800 flex justify-center items-center">
                 <h1 className="welcome text-5xl font-black text-white opacity-0">BIENVENIDOS</h1>
             </div>
