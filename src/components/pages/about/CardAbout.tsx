@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import React, { FC, useRef } from 'react'
+import  { FC, useRef } from 'react'
 
 interface Props{
     title:          string
@@ -11,13 +11,11 @@ export const CardAbout: FC<Props> = ({ title, description }) => {
 		target: containerRef,
 		offset: ['start end', 'end end'],
 	})
-	const scale = useTransform(scrollYProgress, [0.5, 1], [1, 0.4])
 	const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
 	const opacityText = useTransform(scrollYProgress, [0, .4,1], [0, .1,1])
 	const translate = useTransform(scrollYProgress, [0, .7], [-300, 0])
 	const translateText = useTransform(scrollYProgress, [0, .6], [-500, 0])
 	const position = useTransform(scrollYProgress, [0,.6], [500, 0])
-	const positionText = useTransform(scrollYProgress, [0,1], [100, 0])
 
 	return (
         <div ref={containerRef} >

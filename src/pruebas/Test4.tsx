@@ -1,8 +1,7 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { VideoBackGround } from '../components/pages/home/VideoBackGround'
 import { SideBar2 } from '../components/ui/SideBar2'
-import { ListAnunt } from '../components/pages/anunciament/ListAnunt'
 
 export const Test4 = () => {
 	const containerRef = useRef(null)
@@ -21,12 +20,12 @@ export const Test4 = () => {
 	const shadow  = useTransform(scrollYProgress, [0, 1], [0, 1]) ;
 	
 console.log(shadow)
-	const [open, setOpen] = useState(false)
+	// const [open, setOpen] = useState(false)
 
-	const openModal = () => {
-		setOpen((prev) => !prev)
-		console.log(open)
-	}
+	// const openModal = () => {
+	// 	setOpen((prev) => !prev)
+	// 	console.log(open)
+	// }
 	return (
 		<div 
 		// className='bg-gradient-to-tl from-[#0050fc] to-zinc-950'
