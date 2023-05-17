@@ -20,8 +20,11 @@ export const Home = () => {
 					</motion.h1>
 					<motion.p className='address text-white z-0 ' style={{scale}}>Direcion Lorem ipsum dolor</motion.p>
 				</div>
+				
 			</div>
+
             <VideoBackGround/>
+			
 			
 		</div>
 	)

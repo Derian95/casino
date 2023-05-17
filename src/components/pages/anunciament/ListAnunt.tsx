@@ -7,8 +7,9 @@ gsap.registerPlugin(ScrollTrigger)
 export const ListAnunt = () => {
 
 	return (
-		<div
-			className='w-full h-auto gap-4  grid grid-cols-1 px-4  sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 content-center  justify-center '
+		<div className='flex justify-center items-center w-full '>
+<div
+			className=' w-full lg:w-3/4 h-auto gap-4  grid grid-cols-1 px-4  sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-2 content-center  justify-center '
       // className='flex gap-12 w-auto flex-nowrap justify-center items-center  h-screen'
       >
 			<Card />
@@ -23,5 +24,7 @@ export const ListAnunt = () => {
 			<Card />
 			<Card />
 		</div>
+		</div>
+		
 	)
 }
