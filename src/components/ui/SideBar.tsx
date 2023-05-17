@@ -38,18 +38,18 @@ export const SideBar = () => {
 					<div>
 						<ol>
 							<ul className='option'>
-							<a href="#inicio" >INICIO</a>
+							<a href="#home" >INICIO</a>
 								
 							</ul>
 							<ul className='option'>
-							<a href="#nosotros" >NOSOTROS</a>
+							<a href="#about" >NOSOTROS</a>
 								</ul>
 							<ul className='option'>
-							<a href="#juegos" >JUEGOS</a>
+							<a href="#events" >EVENTOS</a>
                             
                             </ul>
 							<ul className='option'>
-							<a href="#contacto" >CONTACTO</a>
+							<a href="#contact" >CONTACTO</a>
 
 							</ul>
 						</ol>

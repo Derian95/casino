@@ -16,11 +16,11 @@ export const Test = () => {
           let panels = gsap.utils.toArray(".panel");
           gsap.to(panels, {
             xPercent: -100 * (panels.length - 1),
-            ease: "power3.easeOut",
+            ease: "none",
             scrollTrigger: {
               trigger: slider.current,
               pin: true,
-              scrub: 3,
+              scrub: 10,
               //snap: 1 / (panels.length - 1),
               end: () => "+=" + slider.current!.offsetWidth,
               

@@ -3,8 +3,8 @@ import '../index.css'
 
 export const Contact = () => {
 	return (
-		<div className='mt-24 h-screen w-screen z-10 relative flex justify-center flex-col lg:flex-row '>
-			<div className='h-full w-screen lg:w-2/4  flex flex-col items-center justify-center'>
+		<div className=' h-screen min-w-[100vw] z-10 relative flex justify-center flex-col lg:flex-row ' id='contact'>
+			<div className='h-full  lg:w-2/4  flex flex-col items-center justify-center'>
 				<p>Contacto</p>
 
 				<p>Escribanos ra de rasssasas</p>
@@ -39,7 +39,7 @@ export const Contact = () => {
                 </div>
 				</form>
 			</div>
-			<div className='w-screen lg:w-2/4  h-screen'>
+			<div className=' lg:w-2/4  h-screen'>
         <Map/>
       </div>
 		</div>

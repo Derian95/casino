@@ -19,7 +19,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-horizontal-scrolling-menu": "^4.0.4",
-    "react-scroll-parallax": "^3.4.2"
+    "react-scroll-parallax": "^3.4.2",
+    "zustand": "^4.3.8"
   },
   "devDependencies": {
     "@types/mapbox-gl": "^2.7.11",

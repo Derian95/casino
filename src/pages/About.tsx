@@ -19,7 +19,7 @@ export const About = () => {
    
 
   return (
-    <div className="w-screen h-auto  py-[320px] flex items-center flex-col overflow-x-hidden" >
+    <div className=" h-screen min-w-[100vw] py-[320px] flex items-center flex-col overflow-x-hidden" >
         {
             dataFake.map( item => (
                 <CardAbout key={item.title} title={ item.title } description={ item.description}/>

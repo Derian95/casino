@@ -12,8 +12,8 @@ export const Home = () => {
 	const scale = useTransform(scrollYProgress, [0,1], [1,0.5])
 
 	return (
-		<div className='relative w-screen h-screen ' ref={containerRef}>
-			<div className=' sm:pl-[68px] h-screen  flex items-center z-10 absolute '>
+		<div className='relative min-w-[100vw] h-screen ' ref={containerRef} id='home'>
+			<div className=' sm:pl-[68px] h-screen  flex items-center z-20 absolute '>
 				<div className='h-1/4 w-auto  pl-10 flex flex-col  justify-between'>
 					<motion.h1 className='salaName sm:text-5xl md:text-6xl lg:text-7xl text-4xl font-black text-white  translate-y-10' style={{scale}}>
 						NOMBRE SALA
