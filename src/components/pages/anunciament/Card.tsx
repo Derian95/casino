@@ -22,7 +22,7 @@ export const Card = () => {
   //viewport={{once:true}}
 
   return (
-    <motion.div  variants={cardVariants} initial="hidden" whileInView="show"  onClick={changeStateDetail}  className="panel h-[500px] w-[500px]  rounded-lg  bg-[#2c3036] min-w[320px]  flex flex-col justify-around relative px-8 hover:bg-slate-600 group transition-colors duration-200 ease-in overflow-hidden">
+    <motion.div viewport={{once:true}}  variants={cardVariants} initial="hidden" whileInView="show"  onClick={changeStateDetail}  className="panel h-[500px] w-[500px]  rounded-lg  bg-[#2c3036] min-w[320px]  flex flex-col justify-around relative px-8 hover:bg-slate-600 group transition-colors duration-200 ease-in overflow-hidden">
         <img src={imagen} alt="" className='h-full w-full absolute left-0 group-hover:scale-110 duration-300 ease'/>
         <div className='h-full w-full absolute left-0 bg-gray-900 group-hover:bg-transparent transition-colors duration-300 ease'>
         <div className='absolute'>

@@ -5,6 +5,10 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import { SideBar2 } from "./components/ui/SideBar2";
 import { VideoBackGround } from "./components/pages/home/VideoBackGround";
+import { Home } from "./pages/Home";
+import { NewAbout } from "./pages/NewAbout";
+import { NewEvents } from "./pages/NewEvents";
+import { Contact } from "./pages/Contact";
 gsap.registerPlugin(ScrollTrigger)
 export const Test = () => {
 
@@ -15,12 +19,12 @@ export const Test = () => {
         let ctx = gsap.context(() => {
           let panels = gsap.utils.toArray(".panel");
           gsap.to(panels, {
-            xPercent: -100 * (panels.length - 1),
+            xPercent: -10 * (panels.length),
             ease: "none",
             scrollTrigger: {
               trigger: slider.current,
               pin: true,
-              scrub: 10,
+              scrub: 3,
               //snap: 1 / (panels.length - 1),
               end: () => "+=" + slider.current!.offsetWidth,
               
@@ -33,7 +37,7 @@ export const Test = () => {
   return (
     <div className="  flex flex-nowrap " ref={slider}>
         {/* <SideBar  /> */}
-        <SideBar2/>
+        {/* <SideBar2/>
           <div className="h-screen min-w-[100vw] bg-red-800 panel ">
            <VideoBackGround/>
         </div>
@@ -48,6 +52,13 @@ export const Test = () => {
         <div className="h-screen w-fit  panel">
         <h1 className="h-64 w-[1200px] bg-red-900">hola</h1>
 
+        </div> */}
+
+        <div className="panel min-w-fit flex">
+          <Home/>
+          <NewAbout />
+          <NewEvents />
+          <Contact />
         </div>
     </div>
     )
