@@ -3,8 +3,6 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-import { SideBar2 } from "./components/ui/SideBar2";
-import { VideoBackGround } from "./components/pages/home/VideoBackGround";
 import { Home } from "./pages/Home";
 import { NewAbout } from "./pages/NewAbout";
 import { NewEvents } from "./pages/NewEvents";

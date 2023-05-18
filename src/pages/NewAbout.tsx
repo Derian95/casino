@@ -4,7 +4,7 @@ export const NewAbout = () => {
 	
 
 	return (
-		<div className='flex' id='about' >
+		<div className='flex z-10' id='about' >
 			<div className='h-screen min-w-[100vw] flex items-center justify-center gap-14 '>
 				<motion.div 
                   initial={{opacity:0, translateX:200}}
@@ -13,7 +13,7 @@ export const NewAbout = () => {
                   transition={{duration:2, ease:'backInOut'}}
                 >
 					<p className='text-5xl text-white font-bold  text-[2.625rem ]  mb-10'>NOSOTROS</p>
-					<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] '>
+					<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] selection:bg-orange-700' >
 						{' '}
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
 						officiis itaque expedita nulla corrupti autem. Asperiores cumque

@@ -114,7 +114,6 @@
   font-size: 2em;
   font-weight: bold;
   background-image: radial-gradient(circle,#adf6bd 0,#357bf0 40%); 
-  -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent; 
   animation: desplazamiento 5s infinite;
   background-size: 200% 200%;

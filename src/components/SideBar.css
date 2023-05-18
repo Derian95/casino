@@ -1,7 +1,7 @@
 .aside{
     position: fixed;
     transition:all .5s cubic-bezier(.86,0,.07,1),background-color .3s;
-    z-index: 11;
+    z-index: 20;
     right: 48px;
     top: 48px;
     height: calc(95% - 96px);

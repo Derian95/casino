@@ -1,18 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../SideBar.css'
 import logoExcalibur from '../../assets/excalibur.png'
 import nombreSala from '../../assets/excalibur.svg'
-
+import { useUiStore } from '../../store/uiStore'
 export const SideBar = () => {
 	const [showMenu, setShowMenu] = useState(false)
-
+	const {changeCursorState, cursorStyle}=useUiStore()
 	const toggleMenu = () => {
 		setShowMenu((prev) => !prev)
 	}
+	
 
+	useEffect(() => {
+	  console.log(cursorStyle)
+	
+	}, [cursorStyle])
 	
 	return (
-		<aside className={`aside ${showMenu ? 'show' : 'hide'}`}>
+		<aside className={`aside ${showMenu ? 'show' : 'hide'}`}  onMouseEnter={changeCursorState }  onMouseLeave={changeCursorState}>
 			<div className='aside-contain'>
 				<img src={logoExcalibur} alt='logo' style={{ width: 34 }} />
 				<img src={nombreSala} alt='logo tr' style={{ height: 110 }} />
