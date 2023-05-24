@@ -1,100 +1,58 @@
-import { useRef } from 'react';
-import './App.css'
-import video2 from './assets/video.mp4'
-import { Cursor } from './components/ui/Cursor'
+import { useEffect, useRef } from 'react'
+import { Detail } from './components/pages/anunciament/Detail'
 import { SideBar } from './components/ui/SideBar'
+import { Contact } from './pages/Contact'
+import { Home } from './pages/Home'
+import { NewAbout } from './pages/NewAbout'
+import { NewEvents } from './pages/NewEvents'
 
-import { Noticias } from './pages/Noticias';
-import { Parallax } from 'react-scroll-parallax';
+import image from './assets/ra.jpg'
 
-function App() {
-	const contentRef = useRef<HTMLDivElement>(null);
-	
-	// const ref = useRef<HTMLDivElement>(null);
-  	// const isVisible = useIsVisible(ref);
+export const App = () => {
 
-	// function handleWheel(event: React.WheelEvent<HTMLDivElement>) {
-	// 	const content = contentRef.current;
-	// 	if (!content) {
-	// 	  return;
-	// 	}
-	  
-	// 	const screenWidth = window.innerWidth;
-	// 	const scrollAmount = screenWidth;
-	// 	const direction = event.deltaY > 0 ? 1 : -1; // Positive deltaY means scroll down, negative means scroll up.
-	// 	content.scrollLeft += direction * scrollAmount;
-	//   }
+	const boxScrollRef = useRef<HTMLDivElement>(null)
 
+	useEffect(() => {
+		const handleMouseWheel = (e: WheelEvent) => {
+			const race = 400 // How many pixels to scroll
 
-	function handleWheel(event: React.WheelEvent<HTMLDivElement>) {
-		const content = contentRef.current;
-		if (!content) {
-		  return;
+			if (e.deltaY > 0) {
+				// Scroll right
+				if (boxScrollRef.current) {
+					boxScrollRef.current.scrollLeft += race
+				}
+			} else {
+				// Scroll left
+				if (boxScrollRef.current) {
+					boxScrollRef.current.scrollLeft -= race
+				}
+			}
+			e.preventDefault()
 		}
-	
-		content.scrollLeft += event.deltaY * 2;
-	  }
-	//   const startAndEnd = {
-	// 	startScroll: 0,
-	// 	endScroll: window.innerWidth
-	//   };
 
-	
-	//   const parallax = useParallax<HTMLDivElement>({  
-		
-	// 	rotate: [20, 0]
-	// })
+		const boxScrollElement = boxScrollRef.current
 
+		if (boxScrollElement) {
+			boxScrollElement.addEventListener('wheel', handleMouseWheel)
+		}
+
+		return () => {
+			if (boxScrollElement) {
+				boxScrollElement.removeEventListener('wheel', handleMouseWheel)
+			}
+		}
+	}, [])
 
 	return (
-		
-		<div className='cont'    ref={contentRef}
-		onWheel={handleWheel}
-		>
-			<Cursor/>
-			<SideBar  />
-			<div className='video-background' id='inicio'>
-				<video autoPlay loop muted>
-					<source src={video2} type='video/mp4' />
-				</video>
-				<div className='overlay'></div>
-				<div className='content'>
-					{/* <h1 className='test' >EXCALIBUR</h1> */}
-				</div> 
-			
-			</div>
-			
-			<Noticias/>
-
-			<div className= {` divC  `}  >
-				<Parallax id='nosotros' style={{maxWidth:500}}  translateX={['-400px', '0px']}
-  scale={[0.75, 1]}
-  rotate={[-180, 0]}
-  easing="easeInQuad">
-					<h4 className='test'>SOBRE NOSOTROS</h4>
-
-					<p  className='text'>Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali testausteksti jo 1500-luvulta asti, jolloin tuntematon tulostaja otti kaljuunan ja sekoitti sen tehdäkseen esimerkkikirjan. Se ei ole selvinnyt vain viittä vuosisataa, mutta myös loikan elektroniseen kirjoitukseen, jääden suurinpiirtein muuntamattomana. Se tuli kuuluisuuteen 1960-luvulla kun Letraset-paperiarkit, joissa oli Lorem Ipsum pätkiä, julkaistiin ja vielä myöhemmin tietokoneen julkistusohjelmissa, kuten Aldus PageMaker joissa oli versioita Lorem Ipsumista.</p>
-				
-				</Parallax>
-			</div>
-			
-			<div style={{  backgroundColor:'#191919',height:'100vh', minWidth:'100vw'}}>
-				<div style={{paddingRight:100, marginBottom:'80px'}} id='juegos'>
-					<h4 className='test'>JUEGOS</h4>
-					<p  className='text'>Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali testausteksti jo 1500-luvulta asti, jolloin tuntematon tulostaja otti kaljuunan ja sekoitti sen tehdäkseen esimerkkikirjan. Se ei ole selvinnyt vain viittä vuosisataa, mutta myös loikan elektroniseen kirjoitukseen, jääden suurinpiirtein muuntamattomana. Se tuli kuuluisuuteen 1960-luvulla kun Letraset-paperiarkit, joissa oli Lorem Ipsum pätkiä, julkaistiin ja vielä myöhemmin tietokoneen julkistusohjelmissa, kuten Aldus PageMaker joissa oli versioita Lorem Ipsumista.</p>
-				
-				</div>
-			</div>
-
-			<div style={{  backgroundColor:'#191919',height:'100vh', minWidth:'100vw'}}>
-				<div style={{paddingRight:100, marginBottom:'80px'}} id='contacto'>
-					<h4 className='test'>CONTACTO</h4>
-					<p  className='text'>Lorem Ipsum on yksinkertaisesti testausteksti, jota tulostus- ja ladontateollisuudet käyttävät. Lorem Ipsum on ollut teollisuuden normaali testausteksti jo 1500-luvulta asti, jolloin tuntematon tulostaja otti kaljuunan ja sekoitti sen tehdäkseen esimerkkikirjan. Se ei ole selvinnyt vain viittä vuosisataa, mutta myös loikan elektroniseen kirjoitukseen, jääden suurinpiirtein muuntamattomana. Se tuli kuuluisuuteen 1960-luvulla kun Letraset-paperiarkit, joissa oli Lorem Ipsum pätkiä, julkaistiin ja vielä myöhemmin tietokoneen julkistusohjelmissa, kuten Aldus PageMaker joissa oli versioita Lorem Ipsumista.</p>
-				
-				</div>
-			</div>
+		<div className='flex flex-nowrap max-w-[100vw] h-[100vh] overflow-y-hidden container-app bg-gray-950 ' ref={boxScrollRef}>
+		<img src={image} alt="" className='h-screen w-screen fixed z-[0] object-cover' />
+        <div className='fixed h-screen w-screen z-0 bg-gradient-to-r from-slate-900 to-slate-950/95'></div>
+			<SideBar />
+			<Home />
+			<NewAbout containerRef={boxScrollRef} />
+			<NewEvents containerRef={boxScrollRef} />
+			<Contact />
+			<Detail />
 		</div>
 	)
 }
-
-export default App

@@ -105,8 +105,8 @@ export const Test5 = () => {
 			{/* <Loader /> */}
 			<SideBar />
 			<Home />
-			<NewAbout />
-			<NewEvents />
+			{/* <NewAbout /> */}
+			{/* <NewEvents /> */}
 			<Contact />
 			<Detail />
 			{/* <div ref={ref} className='min-w-[60vw] h-screen bg-green-600'>

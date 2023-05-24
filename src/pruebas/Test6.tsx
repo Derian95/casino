@@ -39,8 +39,7 @@ export const Test6 = () => {
 	const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
   const isDiv1OnTop = useOverlapDetection(div1Ref, div2Ref,boxScrollRef);
-
-	return (
+  return (
 		<div
 			className='flex flex-nowrap max-w-[100vw] h-[100vh] overflow-y-auto container-app '
 			ref={boxScrollRef}>
@@ -76,7 +75,6 @@ export const Test6 = () => {
 						</motion.p>
 						<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] selection:bg-orange-700'>
 							{' '}
-							{isDiv1OnTop && 'TRAAAAAAAAAAAA'}
 							AAAAA Lorem ipsum dolor sit amet consectetur adipisicing elit.
 							Asperiores officiis itaque expedita nulla corrupti autem.
 							Asperiores cumque quibusdam est deserunt voluptate impedit

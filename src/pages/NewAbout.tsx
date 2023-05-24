@@ -1,41 +1,23 @@
 import { motion, useScroll } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react';
+import { FC, RefObject, useEffect, useRef, useState } from 'react';
+import useOverlapDetection from '../hooks/useOverlapDetection';
 
-export const NewAbout = () => {
-	const div1Ref = useRef<HTMLDivElement>(null);
-  const div2Ref = useRef<HTMLDivElement>(null);
-  const [isDiv1OnTop, setIsDiv1OnTop] = useState(false);
 
-  useEffect(() => {
-    const checkOverlap = () => {
-      const div1 = div1Ref.current;
-      const div2 = div2Ref.current;
+interface Props {
+	containerRef: RefObject<HTMLElement>
+}
 
-      if (div1 && div2) {
-        const rect1 = div1.getBoundingClientRect();
-        const rect2 = div2.getBoundingClientRect();
-
-        const isOverlap =
-          rect1.top < rect2.bottom &&
-          rect1.bottom > rect2.top &&
-          rect1.left < rect2.right &&
-          rect1.right > rect2.left;
-
-        setIsDiv1OnTop(isOverlap);
-      }
-    };
-
-    window.addEventListener('scroll', checkOverlap);
-    return () => {
-      window.removeEventListener('scroll', checkOverlap);
-    };
-  }, []);
+export const NewAbout: FC<Props>  = ({ containerRef }) => {
+	const div1Ref = useRef<HTMLDivElement>(null)
+	const div2Ref = useRef<HTMLDivElement>(null)
+	const isDiv1OnTop = useOverlapDetection(div1Ref, div2Ref, containerRef)
+  
 	return (
 		<div className='flex z-10 min-w-fit w-fit mx-40' id='about'   >
 			<div className='h-screen  flex items-center justify-center gap-14 '>
 			<div 
-					className='w-80 h-screen  sticky left-0  -z-10 transition-all duration-700 ease'
-					style={{opacity:isDiv1OnTop?.5:1}}
+					className='min-w-[320px] h-screen  sticky left-0  -z-10 transition-all duration-700 ease'
+					style={{opacity:isDiv1OnTop?.2:1}}
 					ref={div1Ref}
 			>
 			<motion.img
@@ -61,7 +43,6 @@ export const NewAbout = () => {
 					>NOSOTROS</motion.p>
 					<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] selection:bg-orange-700' >
 						{' '}
-						{isDiv1OnTop && "TRAAAAAAAAAAAA"}
 						AAAAA
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
 						officiis itaque expedita nulla corrupti autem. Asperiores cumque

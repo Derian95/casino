@@ -38,7 +38,7 @@ export const Ra = ( objt:RefObject<HTMLElement>) => {
 						</motion.p>
 						<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] selection:bg-orange-700'>
 							{' '}
-							{isDiv1OnTop && 'TRAAAAAAAAAAAA'}
+						
 							AAAAA Lorem ipsum dolor sit amet consectetur adipisicing elit.
 							Asperiores officiis itaque expedita nulla corrupti autem.
 							Asperiores cumque quibusdam est deserunt voluptate impedit

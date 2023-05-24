@@ -6,12 +6,13 @@ import './index.css'
 // import { Text3 } from './pruebas/Text3.tsx'
 import { Test5 } from './pruebas/Test5.tsx'
 import { Test6 } from './pruebas/Test6.tsx'
+import { App } from './App.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
 		{/* <App/> */}
 		{/* <Loader/> */}
-		<Test6/>
+		<App/>
 		{/* <div className="wrapper">
 		<div className="swipe">
 		<h1>Derian</h1>
