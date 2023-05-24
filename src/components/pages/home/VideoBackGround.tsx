@@ -26,8 +26,8 @@ export const VideoBackGround = () => {
             >
 			<source src={video} type='video/mp4' />
             </motion.video>
-			<div className='fixed text-white z-[25] w-[0.1px] h-2/5 right-10 bg-white '>
-			</div>
+			{/* <div className='fixed text-white z-[25] w-[0.1px] h-2/5 right-10 bg-white '>
+			</div> */}
         </div>
 	)
 }

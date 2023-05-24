@@ -14,16 +14,18 @@ import { Detail } from '../components/pages/anunciament/Detail'
 import { useUiStore } from '../store/uiStore'
 import { Equalizer } from '../components/ui/Equalizer'
 import image from '../assets/ra.jpg'
+import axios from 'axios'
 export const Test5 = () => {
 	const scrollContainerRef = useRef<HTMLDivElement>(null)
+	const containerRef = useRef<HTMLDivElement>(null)
 	const { cursorStyle, cursorStyleDetail } = useUiStore()
 	//const scrollContainer = useRef<HTMLDivElement>(null)
-
 	// const size = useWindowSize()
 	// const ref = useRef(null)
 	// const isInView = useInView(ref, { once: true })
 
 	useEffect(() => {
+
 		const scrollContainer = scrollContainerRef.current
 		if (!scrollContainer) return
 
@@ -39,6 +41,33 @@ export const Test5 = () => {
 		}
 	}, [])
 
+
+	useEffect(() => {
+		const handleWheel = (event: WheelEvent) => {
+		  event.preventDefault();
+	
+		  if (containerRef.current) {
+			containerRef.current.scrollBy({
+			  left: event.deltaY < 0 ? -300 : 300,
+			});
+		  }
+		};
+	
+		if (containerRef.current) {
+		  containerRef.current.addEventListener('wheel', handleWheel);
+		}
+	
+		return () => {
+		  if (containerRef.current) {
+			containerRef.current.removeEventListener('wheel', handleWheel);
+		  }
+		};
+	  }, []);
+
+
+	 
+
+
 	const cursorX = useMotionValue(-100)
 	const cursorY = useMotionValue(-1000)
 
@@ -51,11 +80,17 @@ export const Test5 = () => {
 		return () => {
 			window.removeEventListener('mousemove', moveCursor)
 		}
+
+		
 	}, [])
+
+
+	
+
 	return (
 		<div
-			className= {`flex   bg-gray-950 h-[100vh] overflow-x-hidden `} 
-			ref={scrollContainerRef}>
+			className= {`flex   bg-gray-950 h-[100vh] `} 
+			ref={containerRef}>
                 <img src={image} alt="" className='h-screen w-screen fixed z-[0] object-cover' />
                 <div className='fixed h-screen w-screen z-0 bg-gradient-to-r from-slate-900 to-slate-950/95'></div>
 			<motion.div
@@ -67,7 +102,7 @@ export const Test5 = () => {
 					translateY: cursorY,
 				}}></motion.div>
 			<Equalizer />
-			<Loader />
+			{/* <Loader /> */}
 			<SideBar />
 			<Home />
 			<NewAbout />

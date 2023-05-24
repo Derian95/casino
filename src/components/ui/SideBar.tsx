@@ -12,17 +12,17 @@ export const SideBar = () => {
 	
 
 	useEffect(() => {
-	  console.log(cursorStyle)
+	 // console.log(cursorStyle)
 	
 	}, [cursorStyle])
 	
 	return (
 		<aside className={`aside ${showMenu ? 'show' : 'hide'}`}  onMouseEnter={changeCursorState }  onMouseLeave={changeCursorState}>
-			<div className='aside-contain'>
+			<div className='aside-contain' onClick={toggleMenu} >
 				<img src={logoExcalibur} alt='logo' style={{ width: 34 }} />
 				<img src={nombreSala} alt='logo tr' style={{ height: 110 }} />
 				<div className='contain-btn'>
-					<div className='button-open-menu' onClick={toggleMenu}>
+					<div className='button-open-menu' >
 						<p className='icon-button'>+</p>
 					</div>
 				</div>

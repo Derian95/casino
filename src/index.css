@@ -24,7 +24,7 @@ body {
 * {
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
-	cursor: none;
+	/* cursor: none; */
 }
 
 .sidebar-container a {
@@ -171,7 +171,6 @@ input:hover + input::after {
 }
 
 .cursorHover {
-   
 	width: 12px;
 	height: 12px;
 	background-color: white;
@@ -185,8 +184,8 @@ input:hover + input::after {
 }
 
 .arrow-container {
-    position: absolute;
-    bottom: 15px;
+	position: absolute;
+	bottom: 15px;
 	width: 50px;
 	height: 50px;
 	transform: translate(-50%, -50%) rotateZ(90deg);
@@ -237,3 +236,87 @@ input:hover + input::after {
 	opacity: 0.9;
 	top: 75%;
 }
+
+
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+.wrapper .swipe {
+    position: relative;
+    width: fit-content;
+}
+.wrapper .swipe::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    width: 0%;
+    height: 100%;
+    background-color: #ff5858;
+    animation: swipe 1.5s ease-out 1s forwards ;
+}
+.wrapper .swipe--delay::after {
+    background-color: #fff;
+    animation-delay: 1.5s;
+}
+.wrapper h1 {
+    display: block;
+    color: #fff;
+    font-size: 72px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    opacity: 0;
+    animation: fade 0.01s ease-out 1.75s forwards ;
+}
+.wrapper h3 {
+    display: block;
+    color: #fff;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    opacity: 0;
+    animation: fade 0.01s ease-out 2.25s forwards;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+   }
+    to {
+        opacity: 1;
+   }
+}
+@keyframes swipe {
+    0% {
+        right: 100%;
+        left: 0;
+        width: 0%;
+   }
+    50% {
+        right: 0;
+        left: 0;
+        width: 100%;
+   }
+    100% {
+        right: 0;
+        left: 100%;
+        width: 0%;
+   }
+}
+
+
+
+
