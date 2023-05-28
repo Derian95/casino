@@ -7,6 +7,7 @@ import './index.css'
 import { Test5 } from './pruebas/Test5.tsx'
 import { Test6 } from './pruebas/Test6.tsx'
 import { App } from './App.tsx'
+import { Test7 } from './pruebas/Test7.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>

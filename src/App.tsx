@@ -5,43 +5,15 @@ import { Contact } from './pages/Contact'
 import { Home } from './pages/Home'
 import { NewAbout } from './pages/NewAbout'
 import { NewEvents } from './pages/NewEvents'
+import useMouseWheelScroll from './hooks/useMouseWheelScroll '
 
 import image from './assets/ra.jpg'
 
 export const App = () => {
 
 	const boxScrollRef = useRef<HTMLDivElement>(null)
+	useMouseWheelScroll(boxScrollRef);
 
-	useEffect(() => {
-		const handleMouseWheel = (e: WheelEvent) => {
-			const race = 400 // How many pixels to scroll
-
-			if (e.deltaY > 0) {
-				// Scroll right
-				if (boxScrollRef.current) {
-					boxScrollRef.current.scrollLeft += race
-				}
-			} else {
-				// Scroll left
-				if (boxScrollRef.current) {
-					boxScrollRef.current.scrollLeft -= race
-				}
-			}
-			e.preventDefault()
-		}
-
-		const boxScrollElement = boxScrollRef.current
-
-		if (boxScrollElement) {
-			boxScrollElement.addEventListener('wheel', handleMouseWheel)
-		}
-
-		return () => {
-			if (boxScrollElement) {
-				boxScrollElement.removeEventListener('wheel', handleMouseWheel)
-			}
-		}
-	}, [])
 
 	return (
 		<div className='flex flex-nowrap max-w-[100vw] h-[100vh] overflow-y-hidden container-app bg-gray-950 ' ref={boxScrollRef}>
@@ -51,7 +23,7 @@ export const App = () => {
 			<Home />
 			<NewAbout containerRef={boxScrollRef} />
 			<NewEvents containerRef={boxScrollRef} />
-			<Contact />
+			<Contact containerRef={boxScrollRef}/>
 			<Detail />
 		</div>
 	)

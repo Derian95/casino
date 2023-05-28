@@ -52,10 +52,10 @@ transform: rotate(90deg);
 
 
 .show{
-    transform: translateX(0);
+    transform: translateX(46px);
 }
 .hide{
-    transform: translateX(290px);
+    transform: translateX(300px);
     
 }
 .contain-btn{

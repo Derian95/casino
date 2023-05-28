@@ -17,8 +17,8 @@ export const SideBar = () => {
 	}, [cursorStyle])
 	
 	return (
-		<aside className={`aside ${showMenu ? 'show' : 'hide'}`}  onMouseEnter={changeCursorState }  onMouseLeave={changeCursorState}>
-			<div className='aside-contain' onClick={toggleMenu} >
+		<aside className={`aside ${showMenu ? 'show' : 'hide'} group`}  onMouseEnter={changeCursorState }  onMouseLeave={changeCursorState}>
+			<div className='aside-contain group-hover:brightness-150' onClick={toggleMenu} >
 				<img src={logoExcalibur} alt='logo' style={{ width: 34 }} />
 				<img src={nombreSala} alt='logo tr' style={{ height: 110 }} />
 				<div className='contain-btn'>

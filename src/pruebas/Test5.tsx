@@ -89,7 +89,7 @@ export const Test5 = () => {
 
 	return (
 		<div
-			className= {`flex   bg-gray-950 h-[100vh] `} 
+			className= {`flex   bg-gray-950 h-[100vh] overflow-y-auto `} 
 			ref={containerRef}>
                 <img src={image} alt="" className='h-screen w-screen fixed z-[0] object-cover' />
                 <div className='fixed h-screen w-screen z-0 bg-gradient-to-r from-slate-900 to-slate-950/95'></div>
