@@ -4,26 +4,21 @@ import '../index.css'
 import { FC, RefObject, useRef } from 'react'
 import useOverlapDetection from '../hooks/useOverlapDetection'
 
-
 interface Props {
 	containerRef: RefObject<HTMLElement>
 }
 
-export const Contact: FC<Props>  = ({ containerRef }) => {
-
+export const Contact: FC<Props> = ({ containerRef }) => {
 	const div1Ref = useRef<HTMLDivElement>(null)
 	const div2Ref = useRef<HTMLDivElement>(null)
 	const isDiv1OnTop = useOverlapDetection(div1Ref, div2Ref, containerRef)
-	
+
 	return (
-		<div
-			className=' h-screen w-auto flex gap-40 mx-28'
-			id='contact'>
+		<div className=' h-screen w-auto flex gap-40 mx-28' id='contact'>
 			<div
 				className='w-80 h-screen object-cover sticky left-0 transition-opacity duration-300 ease-in'
 				ref={div1Ref}
-				style={{ opacity: isDiv1OnTop ? 0.5 : 1 }}
-			>
+				style={{ opacity: isDiv1OnTop ? 0.5 : 1 }}>
 				<motion.img
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
@@ -56,29 +51,36 @@ export const Contact: FC<Props>  = ({ containerRef }) => {
 							<input
 								type='text'
 								placeholder='Nombre'
-								className='relative ra  h-14 w-full bg-slate-600 outline-none px-4'
+								className='relative ra  h-14 w-full bg-transparent outline-none px-4'
 							/>
 							<div className='h-1 w-0 bg-red-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
 						</div>
-						<div className='w-full group'>
+						<div className='w-full group relative flex flex-col justify-center'>
+							<label
+								htmlFor=''
+								className='text-white absolute group-focus-within:-translate-y-5 group-focus-within:scale-75 transition-transform duration-300 ease-in'>
+								Correo
+							</label>
 							<input
 								type='text'
-								placeholder='Correo'
-								className='relative ra  h-14 w-full bg-slate-600 outline-none px-4'
+								placeholder=''
+								className='relative ra  h-11 w-full bg-transparent outline-none'
 							/>
-							<div className='h-1 w-0 bg-red-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
+							<div className='h-[.2px] w-full bg-slate-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
+							<div className='h-[.2px] w-0 bg-orange-600 group-focus-within:w-full transition-all duration-300 ease-in'></div>
 						</div>
+						
 						<div className='w-full group'>
 							<input
 								type='text'
 								placeholder='Asunto'
-								className='relative ra  h-14 w-full bg-slate-600 outline-none px-4'
+								className='relative ra  h-14 w-full bg-transparent outline-none px-4'
 							/>
 							<div className='h-1 w-0 bg-red-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
 						</div>
 						<div className='w-full h-auto group'>
 							<textarea
-								className='relative ra  h-24 w-full bg-slate-600 outline-none px-4 pt-4'
+								className='relative ra  h-24 w-full bg-transparent outline-none px-4 pt-4'
 								placeholder='Mensaje'
 							/>
 							<div className='-translate-x-1 h-1 w-0 bg-red-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>

@@ -42,8 +42,7 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 							<motion.p className='text-6xl text-white font-bold  text-[2.625rem ]  mb-10 '>
 								NOSOTROS
 							</motion.p>
-							<p className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8 selection:bg-orange-700'>
-								{casinoInfo?.history}
+							<p  dangerouslySetInnerHTML={{__html:casinoInfo?.history!}} className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8 selection:bg-orange-700'>
 							</p>
 						</div>
 					</motion.div>
@@ -58,8 +57,7 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 							<p className='text-4xl text-white font-bold  text-[2.625rem ]  pb-5'>
 								MISIÓN
 							</p>
-							<p className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8'>
-								{casinoInfo?.mission}
+							<p dangerouslySetInnerHTML={{__html:casinoInfo?.mission!}} className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8'>
 							</p>
 						</motion.div>
 
@@ -71,8 +69,7 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 							<p className='text-4xl text-white font-bold  text-[2.625rem ]  pb-5'>
 								VISIÓN
 							</p>
-							<p className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8 '>
-							{casinoInfo?.vision}
+							<p dangerouslySetInnerHTML={{__html:casinoInfo?.vision!}} className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8 '>
 
 							</p>
 						</motion.div>
