@@ -2,8 +2,12 @@ import { useEffect, RefObject } from 'react';
 
 const useMouseWheelScroll = (boxScrollRef: RefObject<HTMLElement>) => {
   useEffect(() => {
+
+    const widthScreen = window.innerWidth;
+    console.log(widthScreen)
+  
     const handleMouseWheel = (e: WheelEvent) => {
-      const race = 100; // How many pixels to scroll
+      const race = widthScreen*0.25; // How many pixels to scroll
 
       if (e.deltaY > 0) {
         // Scroll right

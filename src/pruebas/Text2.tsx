@@ -1,7 +1,6 @@
 import { Loader } from '../components/ui/Loader'
 import { SideBar4 } from '../components/ui/SideBar4'
 import { About } from '../pages/About'
-import { Contact } from '../pages/Contact'
 import { Events } from '../pages/Events'
 import { Home } from '../pages/Home'
 import { Menu } from '../components/ui/Menu'
@@ -18,7 +17,6 @@ export const Text2 = () => {
 			<Home />
 			<About />
 			<Events />
-			<Contact />
 		</div>
 	)
 }

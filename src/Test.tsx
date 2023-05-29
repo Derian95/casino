@@ -4,9 +4,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import { Home } from "./pages/Home";
-import { NewAbout } from "./pages/NewAbout";
-import { NewEvents } from "./pages/NewEvents";
-import { Contact } from "./pages/Contact";
 gsap.registerPlugin(ScrollTrigger)
 export const Test = () => {
 
@@ -54,9 +51,6 @@ export const Test = () => {
 
         <div className="panel min-w-fit flex">
           <Home/>
-          <NewAbout />
-          <NewEvents />
-          <Contact />
         </div>
     </div>
     )

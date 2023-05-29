@@ -5,16 +5,10 @@ import { useEffect, useRef
     // , useState 
 } from 'react'
 import { Home } from '../pages/Home'
-import { Contact } from '../pages/Contact'
-import { SideBar } from '../components/ui/SideBar'
-import { NewAbout } from '../pages/NewAbout'
-import { NewEvents } from '../pages/NewEvents'
-import { Loader } from '../components/ui/Loader'
 import { Detail } from '../components/pages/anunciament/Detail'
 import { useUiStore } from '../store/uiStore'
 import { Equalizer } from '../components/ui/Equalizer'
 import image from '../assets/ra.jpg'
-import axios from 'axios'
 export const Test5 = () => {
 	const scrollContainerRef = useRef<HTMLDivElement>(null)
 	const containerRef = useRef<HTMLDivElement>(null)
@@ -103,11 +97,9 @@ export const Test5 = () => {
 				}}></motion.div>
 			<Equalizer />
 			{/* <Loader /> */}
-			<SideBar />
 			<Home />
 			{/* <NewAbout /> */}
 			{/* <NewEvents /> */}
-			<Contact />
 			<Detail />
 			{/* <div ref={ref} className='min-w-[60vw] h-screen bg-green-600'>
 				<motion.div

@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 import useOverlapDetection from '../hooks/useOverlapDetection'
 import { Ra } from './Ra'
 export const Test6 = () => {
@@ -36,10 +36,10 @@ export const Test6 = () => {
 		}
 	}, [])
 
-	const div1Ref = useRef<HTMLDivElement>(null);
-  const div2Ref = useRef<HTMLDivElement>(null);
-  const isDiv1OnTop = useOverlapDetection(div1Ref, div2Ref,boxScrollRef);
-  return (
+	const div1Ref = useRef<HTMLDivElement>(null)
+	const div2Ref = useRef<HTMLDivElement>(null)
+	const isDiv1OnTop = useOverlapDetection(div1Ref, div2Ref, boxScrollRef)
+	return (
 		<div
 			className='flex flex-nowrap max-w-[100vw] h-[100vh] overflow-y-auto container-app '
 			ref={boxScrollRef}>
@@ -60,66 +60,61 @@ export const Test6 = () => {
 						/>
 					</div>
 
-<div 
-						ref={div2Ref} className='flex gap-20'
+					<div ref={div2Ref} className='flex gap-20'>
+						<motion.div
+							initial={{ opacity: 0, translateX: 200 }}
+							whileInView={{ opacity: 1, translateX: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 2, ease: 'backInOut' }}>
+							<motion.p className='text-5xl text-white font-bold  text-[2.625rem ]  mb-10 '>
+								NOSOTROS
+							</motion.p>
+							<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] selection:bg-orange-700'>
+								{' '}
+								AAAAA Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Asperiores officiis itaque expedita nulla corrupti autem.
+								Asperiores cumque quibusdam est deserunt voluptate impedit
+								consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
+							</p>
+						</motion.div>
 
->
+						<motion.div
+							initial={{ opacity: 0, translateX: 200 }}
+							whileInView={{ opacity: 1, translateX: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 2, ease: 'backInOut' }}>
+							<p className='text-5xl text-white font-bold  text-[2.625rem ]  mb-10'>
+								NOSOTROS
+							</p>
+							<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] '>
+								{' '}
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Asperiores officiis itaque expedita nulla corrupti autem.
+								Asperiores cumque quibusdam est deserunt voluptate impedit
+								consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
+							</p>
+						</motion.div>
 
-					<motion.div
-						initial={{ opacity: 0, translateX: 200 }}
-						whileInView={{ opacity: 1, translateX: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 2, ease: 'backInOut' }}>
-						<motion.p className='text-5xl text-white font-bold  text-[2.625rem ]  mb-10 '>
-							NOSOTROS
-						</motion.p>
-						<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] selection:bg-orange-700'>
-							{' '}
-							AAAAA Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Asperiores officiis itaque expedita nulla corrupti autem.
-							Asperiores cumque quibusdam est deserunt voluptate impedit
-							consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
-						</p>
-					</motion.div>
-
-					<motion.div
-						initial={{ opacity: 0, translateX: 200 }}
-						whileInView={{ opacity: 1, translateX: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 2, ease: 'backInOut' }}>
-						<p className='text-5xl text-white font-bold  text-[2.625rem ]  mb-10'>
-							NOSOTROS
-						</p>
-						<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] '>
-							{' '}
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Asperiores officiis itaque expedita nulla corrupti autem.
-							Asperiores cumque quibusdam est deserunt voluptate impedit
-							consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
-						</p>
-					</motion.div>
-
-					<motion.div
-						initial={{ opacity: 0, translateX: 200 }}
-						whileInView={{ opacity: 1, translateX: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 2, ease: 'backInOut' }}>
-						<p className='text-5xl text-white font-bold  text-[2.625rem ]  mb-10'>
-							NOSOTROS
-						</p>
-						<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] '>
-							{' '}
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Asperiores officiis itaque expedita nulla corrupti autem.
-							Asperiores cumque quibusdam est deserunt voluptate impedit
-							consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
-						</p>
-					</motion.div>
+						<motion.div
+							initial={{ opacity: 0, translateX: 200 }}
+							whileInView={{ opacity: 1, translateX: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 2, ease: 'backInOut' }}>
+							<p className='text-5xl text-white font-bold  text-[2.625rem ]  mb-10'>
+								NOSOTROS
+							</p>
+							<p className='text-[#DDDDDD] font-normal max-w-md text-[0.875rem] '>
+								{' '}
+								Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Asperiores officiis itaque expedita nulla corrupti autem.
+								Asperiores cumque quibusdam est deserunt voluptate impedit
+								consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
+							</p>
+						</motion.div>
+					</div>
 				</div>
-</div>
-
 			</div>
-            <Ra current={boxScrollRef.current}/>
+			<Ra current={boxScrollRef.current} />
 			<div className='h-full min-w-[100vw] bg-red-800'></div>
 		</div>
 	)

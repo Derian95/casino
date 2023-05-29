@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion'
 import { FC, RefObject, useRef } from 'react'
 import useOverlapDetection from '../hooks/useOverlapDetection'
+import { dataStore } from '../store/dataStore'
 
 interface Props {
 	containerRef: RefObject<HTMLElement>
 }
 
 export const NewAbout: FC<Props> = ({ containerRef }) => {
+	const {casinoInfo} = dataStore()
 	const div1Ref = useRef<HTMLDivElement>(null)
 	const div2Ref = useRef<HTMLDivElement>(null)
 	const isDiv1OnTop = useOverlapDetection(div1Ref, div2Ref, containerRef)
@@ -41,11 +43,7 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 								NOSOTROS
 							</motion.p>
 							<p className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8 selection:bg-orange-700'>
-								{' '}
-								AAAAA Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Asperiores officiis itaque expedita nulla corrupti autem.
-								Asperiores cumque quibusdam est deserunt voluptate impedit
-								consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
+								{casinoInfo?.history}
 							</p>
 						</div>
 					</motion.div>
@@ -61,11 +59,7 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 								MISIÓN
 							</p>
 							<p className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8'>
-								{' '}
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Asperiores officiis itaque expedita nulla corrupti autem.
-								Asperiores cumque quibusdam est deserunt voluptate impedit
-								consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
+								{casinoInfo?.mission}
 							</p>
 						</motion.div>
 
@@ -78,11 +72,8 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 								VISIÓN
 							</p>
 							<p className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8 '>
-								{' '}
-								Lorem ipsum dolor sit amet consectetur adipisicing elit.
-								Asperiores officiis itaque expedita nulla corrupti autem.
-								Asperiores cumque quibusdam est deserunt voluptate impedit
-								consequatur illum? Unde, quis illo. Reiciendis, quaerat! Quo.
+							{casinoInfo?.vision}
+
 							</p>
 						</motion.div>
 					</div>

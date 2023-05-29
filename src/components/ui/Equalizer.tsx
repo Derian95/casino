@@ -1,8 +1,12 @@
 import { useRef, useState } from 'react'
+import { dataStore } from '../../store/dataStore'
 
 export const Equalizer = () => {
 	const [onSound, setOnSound] = useState(true)
 	const audioRef = useRef<HTMLAudioElement>(null)
+
+
+	const { casinoInfo } = dataStore()
 
 	const onSoundInit = () => {
 		setOnSound((prev) => !prev)
@@ -28,7 +32,7 @@ export const Equalizer = () => {
 				<audio
 					loop
 					ref={audioRef}
-					src='https://res.cloudinary.com/dtzhtjcyr/video/upload/v1684342345/System_Of_A_Down_-_B.Y.O.B._elv04j.mp3'
+					src={casinoInfo?.musicPath}
 				/>
 			</div>
 		</div>
