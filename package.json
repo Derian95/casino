@@ -26,6 +26,7 @@
     "react-locomotive-scroll": "^0.2.2",
     "react-perfect-scrollbar": "^1.5.8",
     "react-scroll-parallax": "^3.4.2",
+    "react-slideshow-image": "^4.2.1",
     "smooth-scrollbar": "^8.8.3",
     "use-smooth-horizontal-scroll": "^0.7.0",
     "zustand": "^4.3.8"

@@ -142,6 +142,7 @@ input:hover + input::after {
 	transition: width 0.5s ease;
 	transition: background-color 0.5s ease;
 	pointer-events: none;
+	z-index: 161;
 }
 
 .cursorHoverText {
@@ -328,6 +329,16 @@ input:hover + input::after {
 
 
 
+.slider{
+	height: 100%;
+}
+
+.react-slideshow-fadezoom-images-wrap{
+	height: 100%;
+}
+.react-slideshow-container .slider{
+	height: 100vh;
+}
 
 
 

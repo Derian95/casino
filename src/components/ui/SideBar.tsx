@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import '../SideBar.css'
 import { useUiStore } from '../../store/uiStore'
 import { dataStore } from '../../store/dataStore'
@@ -9,10 +8,11 @@ export interface CSSProperties {
 
 export const SideBar = () => {
 	const { casinoInfo } = dataStore()
-	const [showMenu, setShowMenu] = useState(false)
-	const { changeCursorState } = useUiStore()
+	//const [showMenu, setShowMenu] = useState(false)
+	const { changeCursorState, showMenu, changeStateMenu } = useUiStore()
 	const toggleMenu = () => {
-		setShowMenu((prev) => !prev)
+		// setShowMenu((prev) => !prev)
+		changeStateMenu()
 	}
 
 	const styles: CSSProperties = {
@@ -57,7 +57,7 @@ export const SideBar = () => {
 					</p>
 					<div>
 						<ol>
-							<ul className='mb-2'>
+							<ul className='mb-2' onClick={toggleMenu}>
 								<a
 									href='#home'
 									className={`rounded-xl bg-white flex justify-center items-center text-sm py-1 font-bold   menu-botom`}
@@ -65,7 +65,7 @@ export const SideBar = () => {
 									INICIO
 								</a>
 							</ul>
-							<ul className='mb-2'>
+							<ul className='mb-2' onClick={toggleMenu}>
 								<a
 									href='#about'
 									className={`rounded-xl bg-white flex justify-center items-center text-sm py-1 font-bold    menu-botom`}
@@ -73,7 +73,7 @@ export const SideBar = () => {
 									NOSOTROS
 								</a>
 							</ul>
-							<ul className='mb-2'>
+							<ul className='mb-2' onClick={toggleMenu}>
 								<a
 									href='#events'
 									className={`rounded-xl bg-white flex justify-center items-center text-sm py-1 font-bold menu-botom`}
@@ -81,7 +81,7 @@ export const SideBar = () => {
 									EVENTOS
 								</a>
 							</ul>
-							<ul className='mb-2'>
+							<ul className='mb-2' onClick={toggleMenu}>
 								<a
 									href='#contact'
 									className={`rounded-xl bg-white flex justify-center items-center text-sm py-1 font-bold  menu-botom`}

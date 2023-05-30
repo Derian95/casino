@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { useUiStore } from '../../../store/uiStore'
-
-const images = [
-	'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FzaW5vfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
-	'https://i0.wp.com/www.completesports.com/wp-content/uploads/Casino-Games.jpg?fit=754%2C424&ssl=1&is-pending-load=1',
-	'https://media.istockphoto.com/id/1158005632/es/foto/el-crupier-sostiene-una-bola-de-ruleta-en-un-casino-en-la-mano.jpg?s=612x612&w=0&k=20&c=8oruAF1PQdov8bHkHcKSuI2dRz6tcuKIlibwNgVY_qc=',
-]
+import { dataStore } from '../../../store/dataStore'
+import { Fade } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
+// const images = [
+// 	'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FzaW5vfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
+// 	'https://i0.wp.com/www.completesports.com/wp-content/uploads/Casino-Games.jpg?fit=754%2C424&ssl=1&is-pending-load=1',
+// 	'https://media.istockphoto.com/id/1158005632/es/foto/el-crupier-sostiene-una-bola-de-ruleta-en-un-casino-en-la-mano.jpg?s=612x612&w=0&k=20&c=8oruAF1PQdov8bHkHcKSuI2dRz6tcuKIlibwNgVY_qc=',
+// ]
 
 // const variants = {
 // 	enter: (direction: number) => {
@@ -34,7 +36,7 @@ export const Detail = () => {
 	const { showDetail, changeStateDetail,changeCursorStateDetail } = useUiStore()
     const [imgLoad, setImgLoad] = useState(false)
 
-
+    const {announcement } = dataStore()
     const onLoadImgReady=() => {
       setImgLoad(true)
       
@@ -61,20 +63,28 @@ export const Detail = () => {
     
     }, [imgLoad])
     
-
+console.log(announcement?.announcementsMedia)
 	return (
 		<div 
-			className={`fixed bg-slate-900 h-screen    w-screen z-40  transition-transform duration-500 ease-in-out ${
+			className={`fixed bg-slate-900 h-screen    w-screen z-[150]  transition-transform duration-500 ease-in-out ${
 				showDetail ? 'translate-y-0' : 'translate-y-full'
 			}`}
 
-			onClick={changeStateDetail} onMouseEnter={changeCursorStateDetail} onMouseLeave={changeCursorStateDetail}
+			
             >
 
 		<div className='h-full w-full flex justify-center items-center sm:flex-row flex-col'>
             <div className='w-2/4 h-full relative'>
                 <div className='absolute h-screen w-full bg-gradient-to-t from-slate-900  to-transparent'></div>
-                <img src={images[2]} alt=""  className='  h-full w-full object-cover ' onLoad={onLoadImgReady}/>
+                {/* <img src={announcement?.announcementsMedia[0].pathWeb} alt=""  className='  h-full w-full object-cover ' onLoad={onLoadImgReady}/> */}
+                <Fade cssClass='slider'>
+                {
+                    announcement?.announcementsMedia.map(element=>(
+                        <img key={element.idAnnouncementMedia} src={element.pathWeb} alt=""  className='  h-full w-full object-cover ' onLoad={onLoadImgReady}/>
+                    ))
+                }
+                </Fade>
+               
                 <div className='w-full left-0 h-32 absolute bottom-0 '>
                    <a  className="arrow-container left-10">
                         <div className="arrow"></div>
@@ -93,15 +103,12 @@ export const Detail = () => {
                 
 
             </div>
-            <div className='h-full w-2/4 overflow-hidden ' ref={scrollContainerRef}>
+            <div className='h-full w-2/4 overflow-hidden ' ref={scrollContainerRef} onClick={changeStateDetail} onMouseEnter={changeCursorStateDetail} onMouseLeave={changeCursorStateDetail}>
                 <div className='w-full min-h-screen flex flex-col items-center justify-center'>
                     <p className='text-5xl text-white font-bold   mb-10'>
-                        DETALLE
+                        {announcement?.title}
                     </p>
-                    <p className='text-[#DDDDDD] font-light max-w-xl text-[1.275rem] w-full'>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure nam
-                        quod, magni, alias distinctio ullam impedit rem dolorem in ut quam et
-                        eos? Reiciendis nostrum officia recusandae debitis optio officiis.
+                    <p className='text-[#DDDDDD] font-light max-w-xl text-[1.275rem] w-full' dangerouslySetInnerHTML={{__html:announcement?.description!}}>
                     </p>
                 </div>
             </div>
