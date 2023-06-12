@@ -2,7 +2,7 @@ import '../SideBar.css'
 import { useUiStore } from '../../store/uiStore'
 import { dataStore } from '../../store/dataStore'
 
-export interface CSSProperties {
+export interface CSSPropertiesI {
 	[key: string]: string | number
 }
 
@@ -15,7 +15,7 @@ export const SideBar = () => {
 		changeStateMenu()
 	}
 
-	const styles: CSSProperties = {
+	const styles: CSSPropertiesI = {
 		'--mi-variable': casinoInfo?.color!,
 		color: casinoInfo?.color!,
 	}

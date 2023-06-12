@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 export const SideBarResponsive = () => {
 	const { casinoInfo } = dataStore()
-	const { changeCursorState, showMenu, changeStateMenu } = useUiStore()
+	const {  changeStateMenu } = useUiStore()
 
 	const [isOpen, setOpen] = useState(false)
 

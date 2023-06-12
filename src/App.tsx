@@ -8,8 +8,6 @@ import { NewEvents } from './pages/NewEvents'
 import useMouseWheelScroll from './hooks/useMouseWheelScroll '
 
 import image from './assets/ra.jpg'
-import { useDataCasino } from './hooks/api/useDataCasino'
-import { dataStore } from './store/dataStore'
 import { Equalizer } from './components/ui/Equalizer'
 import { useUiStore } from './store/uiStore'
 import { motion, useMotionValue } from 'framer-motion'

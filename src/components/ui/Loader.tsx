@@ -72,7 +72,7 @@ export const Loader = () => {
 
 
 	return (
-        <div className="containLoader fixed  loader-contain w-screen h-screen bg-black z-50 flex justify-center items-center "  >
+        <div className="containLoader fixed  loader-contain w-screen h-screen bg-black z-[1000] flex justify-center items-center "  >
             <div className="line absolute h-2 w-0  bg-red-800 flex justify-center items-center">
                 <h1 className="welcome text-5xl font-black text-white opacity-0">BIENVENIDOS</h1>
             </div>

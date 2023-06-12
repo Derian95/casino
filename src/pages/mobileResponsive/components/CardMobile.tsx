@@ -1,10 +1,10 @@
 import { Variants, motion } from 'framer-motion'
 import { useUiStore } from '../../../store/uiStore'
 import { dataStore } from '../../../store/dataStore'
-import { CSSPropertiesI } from '../../../components/ui/SideBar'
 import '../../../components/pages/anunciament/Card.css'
 import { FC } from 'react'
 import { Announcement } from '../../../interface/casino'
+import { CSSPropertiesI } from '../../../components/ui/SideBar'
 
 const cardVariants: Variants = {
 	hidden: { opacity: 0, scale: 0.7 },

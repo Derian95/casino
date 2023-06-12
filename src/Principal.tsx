@@ -4,6 +4,7 @@ import { Mobile } from "./pages/mobileResponsive/Mobile";
 import { App } from "./App";
 import { dataStore } from "./store/dataStore";
 import { useDataCasino } from "./hooks/api/useDataCasino";
+import { Loader } from "./components/ui/Loader";
 export const Principal = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -48,6 +49,7 @@ export const Principal = () => {
     console.log(dataCasino)
   return (
     <div>
+        <Loader/>
     {isMobile || isSmallScreen ? <Mobile /> : <App />}
     </div>
   )
