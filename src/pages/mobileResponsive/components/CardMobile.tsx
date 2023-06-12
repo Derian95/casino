@@ -1,8 +1,8 @@
 import { Variants, motion } from 'framer-motion'
 import { useUiStore } from '../../../store/uiStore'
 import { dataStore } from '../../../store/dataStore'
-import { CSSPropertiesI } from '../../ui/SideBar'
-import './Card.css'
+import { CSSPropertiesI } from '../../../components/ui/SideBar'
+import '../../../components/pages/anunciament/Card.css'
 import { FC } from 'react'
 import { Announcement } from '../../../interface/casino'
 
@@ -27,7 +27,7 @@ interface Props{
 
 
 
-export const Card: FC<Props> = ({data}) => {
+export const CardMobile: FC<Props> = ({data}) => {
 
 	const { title, typeAnnouncement } = data
 	const { changeStateDetail, changeCursorState } = useUiStore()
@@ -56,7 +56,7 @@ export const Card: FC<Props> = ({data}) => {
 			whileInView='show'
 			onClick={onClickCard}
 			style={styles}
-			className='card panel h-2/5 w-[400px]  rounded-lg  bg-[#2c3036] min-w[320px]  flex flex-col justify-around relative px-8 hover:bg-slate-600 group transition-colors duration-200 ease-in overflow-hidden'>
+			className='card panel h-96 w-[400px]  rounded-lg  bg-[#2c3036] min-w[320px]  flex flex-col justify-around relative px-8 hover:bg-slate-600 group transition-colors duration-200 ease-in overflow-hidden'>
 			<img
 				src={imagen}
 				alt=''

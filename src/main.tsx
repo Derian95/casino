@@ -5,6 +5,9 @@ import './index.css'
 import { App } from './App.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { SideBarResponsive } from './components/ui/mobileResponsive/SideBarResponsive.tsx'
+import { Mobile } from './pages/mobileResponsive/Mobile.tsx'
+import { Principal } from './Principal.tsx'
 
 
 const client = new QueryClient()
@@ -14,8 +17,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 		<QueryClientProvider client={ client }>
 			<ReactQueryDevtools/>
 
-				<App/>
+				{/* <App/> */}
 
+					<Principal/>
 		</QueryClientProvider>
 	</React.StrictMode>
 )

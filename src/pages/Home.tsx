@@ -12,7 +12,7 @@ export const Home = () => {
 	})
     
 	const scale = useTransform(scrollYProgress, [0,1], [1,0.5])
-	
+	console.log(casinoInfo?.name)
 	return (
 		<div className='relative min-w-[100vw] h-screen ' ref={containerRef} id='home'>
 			<div className=' sm:pl-[68px] h-screen  flex items-center z-20 absolute '>
@@ -20,7 +20,7 @@ export const Home = () => {
 					<motion.h1  className='salaName sm:text-5xl md:text-6xl lg:text-7xl text-4xl font-black text-white  translate-y-10' style={{scale}}>
 						{casinoInfo?.name}
 					</motion.h1>
-					<motion.p className='address text-white z-0 ' style={{scale}}>Direcion Lorem ipsum dolor</motion.p>
+				
 				</div>
 				
 			</div>

@@ -16,6 +16,6 @@ export const Map = () => {
   }, []);
   
   return (
-    <div className='w-full h-full' id='map'>Map</div>
+    <div className='w-full h-full' id='map'>.</div>
   )
 }

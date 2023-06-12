@@ -5,7 +5,6 @@ import { useUiStore } from '../../store/uiStore'
 export const SideBar4 = () => {
 	
 	const { changeStateMenu, showMenu } = useUiStore()
-	console.log( showMenu )
 	
 	return (
 		<div className='w-20 flex right-0 border-l-[0.5px] border-white flex-col justify-between py-10 backdrop-blur-lg backdrop-brightness-150 fixed h-screen z-30'>

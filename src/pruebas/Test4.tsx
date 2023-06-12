@@ -19,7 +19,6 @@ export const Test4 = () => {
 	const topShadowValue2 = useTransform(scrollYProgress, [0, .5,1], ['20%', '-20%','20%'])
 	const shadow  = useTransform(scrollYProgress, [0, 1], [0, 1]) ;
 	
-console.log(shadow)
 	// const [open, setOpen] = useState(false)
 
 	// const openModal = () => {

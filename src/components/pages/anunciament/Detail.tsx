@@ -59,11 +59,9 @@ export const Detail = () => {
 		}
 	}, [])
     useEffect(() => {
-        console.log('se cargo al imagen')
     
     }, [imgLoad])
     
-console.log(announcement?.announcementsMedia)
 	return (
 		<div 
 			className={`fixed bg-slate-900 h-screen    w-screen z-[150]  transition-transform duration-500 ease-in-out ${

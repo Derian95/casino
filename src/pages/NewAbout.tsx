@@ -37,12 +37,12 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 						whileInView={{ opacity: 1, translateX: 0 }}
 						viewport={{ once: true }}
 						transition={{ duration: 2, ease: 'backInOut' }}
-						className='flex flex-col justify-start items-center h-full pt-24'>
+						className='flex flex-col w-[700px] justify-start items-center h-full pt-24'>
 						<div>
 							<motion.p className='text-6xl text-white font-bold  text-[2.625rem ]  mb-10 '>
 								NOSOTROS
 							</motion.p>
-							<p  dangerouslySetInnerHTML={{__html:casinoInfo?.history!}} className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8 selection:bg-orange-700'>
+							<p  dangerouslySetInnerHTML={{__html:casinoInfo?.history!}} className='text-[#DDDDDD] font-normal max-w-lg text-[1rem] leading-8 selection:bg-orange-700'>
 							</p>
 						</div>
 					</motion.div>
@@ -53,11 +53,11 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 							whileInView={{ opacity: 1, translateX: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 2, ease: 'backInOut' }}
-							className='w-[500px] '>
+							className='w-[700px] '>
 							<p className='text-4xl text-white font-bold  text-[2.625rem ]  pb-5'>
 								MISIÓN
 							</p>
-							<p dangerouslySetInnerHTML={{__html:casinoInfo?.mission!}} className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8'>
+							<p dangerouslySetInnerHTML={{__html:casinoInfo?.mission!}} className='text-[#DDDDDD] font-normal c bg-red-300 text-[1rem] leading-8'>
 							</p>
 						</motion.div>
 
@@ -69,7 +69,7 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 							<p className='text-4xl text-white font-bold  text-[2.625rem ]  pb-5'>
 								VISIÓN
 							</p>
-							<p dangerouslySetInnerHTML={{__html:casinoInfo?.vision!}} className='text-[#DDDDDD] font-normal max-w-md text-[1rem] leading-8 '>
+							<p dangerouslySetInnerHTML={{__html:casinoInfo?.vision!}} className='text-[#DDDDDD] font-normal w-[700px] text-[1rem] leading-8 '>
 
 							</p>
 						</motion.div>

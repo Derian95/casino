@@ -10,7 +10,6 @@ export const Text3 = () => {
 
 	const openModal = () => {
 		setOpen((prev) => !prev)
-		console.log(open)
 	}
 
 	return (

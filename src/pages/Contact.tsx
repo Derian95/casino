@@ -46,46 +46,46 @@ export const Contact: FC<Props> = ({ containerRef }) => {
 					</div>
 				</motion.div>
 				<div className='h-full   flex flex-col items-center justify-center'>
-					<form action='' className='flex flex-col gap-y-3 w-[600px] '>
-						<div className='w-full group'>
-							<input
-								type='text'
-								placeholder='Nombre'
-								className='relative ra  h-14 w-full bg-transparent outline-none px-4'
-							/>
-							<div className='h-1 w-0 bg-red-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
-						</div>
-						<div className='w-full group relative flex flex-col justify-center'>
-							<label
-								htmlFor=''
-								className='text-white absolute group-focus-within:-translate-y-5 group-focus-within:scale-75 transition-transform duration-300 ease-in'>
-								Correo
-							</label>
-							<input
-								type='text'
-								placeholder=''
-								className='relative ra  h-11 w-full bg-transparent outline-none'
-							/>
-							<div className='h-[.2px] w-full bg-slate-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
-							<div className='h-[.2px] w-0 bg-orange-600 group-focus-within:w-full transition-all duration-300 ease-in'></div>
-						</div>
-						
-						<div className='w-full group'>
-							<input
-								type='text'
-								placeholder='Asunto'
-								className='relative ra  h-14 w-full bg-transparent outline-none px-4'
-							/>
-							<div className='h-1 w-0 bg-red-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
-						</div>
-						<div className='w-full h-auto group'>
-							<textarea
-								className='relative ra  h-24 w-full bg-transparent outline-none px-4 pt-4'
-								placeholder='Mensaje'
-							/>
-							<div className='-translate-x-1 h-1 w-0 bg-red-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
-						</div>
-					</form>
+				<form action='' className='flex flex-col w-[600px] gap-y-10  px-10 '>
+					<div className='w-full group'>
+					<input
+							type='text'
+							placeholder='Nombres'
+							className='relative ra  text-white h-11 w-full bg-transparent outline-none'
+							 />
+						<div className='h-[.2px] w-full  bg-slate-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
+						<div className='h-[.2px] w-0 bg-orange-600 group-focus-within:w-full transition-all duration-300 ease-in'></div>
+					</div>
+
+					
+					<div className='w-full group'>
+					<input
+							type='text'
+							placeholder='Correo'
+							className='relative ra  text-white h-11 w-full bg-transparent outline-none'
+							 />
+						<div className='h-[.2px] w-full  bg-slate-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
+						<div className='h-[.2px] w-0 bg-orange-600 group-focus-within:w-full transition-all duration-300 ease-in'></div>
+					</div>
+					
+
+					<div className='w-full group'>
+					<input
+							type='text'
+							placeholder='Asunto'
+							className='relative ra  text-white h-11 w-full bg-transparent outline-none'
+							 />
+						<div className='h-[.2px] w-full  bg-slate-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
+						<div className='h-[.2px] w-0 bg-orange-600 group-focus-within:w-full transition-all duration-300 ease-in'></div>
+					</div>
+					<div className='w-full h-auto group'>
+						<textarea
+							className='relative ra text-white  h-24 w-full bg-transparent outline-none '
+							placeholder='Mensaje' />
+						<div className='h-[.2px] w-full  bg-slate-600 group-focus-within:w-full transition-all duration-200 ease-in'></div>
+						<div className='h-[.2px] w-0 bg-orange-600 group-focus-within:w-full transition-all duration-300 ease-in'></div>
+					</div>
+				</form>
 				</div>
 				<div className='  h-screen w-[600px] bg-red-200'>
 					<Map />

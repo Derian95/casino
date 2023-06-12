@@ -29,7 +29,7 @@ export const SideBar = () => {
 				className='aside-contain group-hover:brightness-150 transition-all duration-200 ease-out'
 				onClick={toggleMenu}>
 				<img
-					src={casinoInfo?.logoPath}
+					src={casinoInfo?.logoPathWeb}
 					alt='logo'
 					style={{ width: 55, objectFit: 'cover' }}
 				/>
@@ -94,10 +94,21 @@ export const SideBar = () => {
 				</div>
 
 				<p style={{ color: 'white', fontSize: 12 }}>
-					Un casino es una instalación que alberga y tiene capacidad para
-					ciertos juegos de azar. Los casinos son comúnmente construidos cerca o
-					en combinación con hoteles, restaurantes, tiendas comerciales,
-					cruceros turísticos y otras atracciones.
+					{casinoInfo?.socialNetworks.map(social=>(
+						<span key={social.idIcon}>{social.name}</span>
+					))}
+				</p>
+
+				<p style={{ color: 'white', fontSize: 12 }}>
+				{casinoInfo?.contactEmails.map(social=>(
+						<span key={social.idContactEmail}>{social.email}</span>
+					))}
+				</p>
+
+				<p style={{ color: 'white', fontSize: 12 }}>
+				{casinoInfo?.contactPhones.map(social=>(
+						<span key={social.idContactPhone}>{social.phoneNumber}</span>
+					))}
 				</p>
 			</div>
 		</aside>
