@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useUiStore } from '../../../store/uiStore'
 import { dataStore } from '../../../store/dataStore'
-import { Slide, Zoom } from 'react-slideshow-image';
+import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 // const images = [
 // 	'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FzaW5vfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
