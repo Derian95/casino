@@ -5,6 +5,7 @@ import { CSSPropertiesI } from '../../ui/SideBar'
 import './Card.css'
 import { FC } from 'react'
 import { Announcement } from '../../../interface/casino'
+import { ImageLoading } from '../../ui/ImageLoading'
 
 const cardVariants: Variants = {
 	hidden: { opacity: 0, scale: 0.7 },
@@ -17,8 +18,6 @@ const cardVariants: Variants = {
 		},
 	},
 }
-const imagen =
-	'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FzaW5vfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
 
 
 interface Props{
@@ -29,7 +28,7 @@ interface Props{
 
 export const Card: FC<Props> = ({data}) => {
 
-	const { title, typeAnnouncement } = data
+	const { title, typeAnnouncement, announcementsMedia } = data
 	const { changeStateDetail, changeCursorState } = useUiStore()
 	const { casinoInfo } = dataStore()
 
@@ -57,11 +56,14 @@ export const Card: FC<Props> = ({data}) => {
 			onClick={onClickCard}
 			style={styles}
 			className='card panel h-2/5 w-[400px]  rounded-lg  bg-[#2c3036] min-w[320px]  flex flex-col justify-around relative px-8 hover:bg-slate-600 group transition-colors duration-200 ease-in overflow-hidden'>
-			<img
-				src={imagen}
+			<div className='h-full w-full absolute left-0 group-hover:scale-110 duration-300 ease group-hover:rotate-6'>
+			<ImageLoading src={announcementsMedia[0].pathWeb}/>
+			</div>
+			{/* <img
+				src={announcementsMedia[0].pathWeb}
 				alt=''
 				className='h-full w-full absolute left-0 group-hover:scale-110 duration-300 ease group-hover:rotate-6'
-			/>
+			/> */}
 			<div className='h-full w-full absolute left-0 bg-gradient-to-t from-slate-900  to-transparent group-hover:bg-none transition-all duration-500   '>
 				<div className='absolute  bottom-0 left-4 h-full py-4 group-hover:opacity-0 transition-all duration-500'>
 					<div className='flex justify-between flex-col h-full'>

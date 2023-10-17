@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useUiStore } from '../../../store/uiStore'
 import { dataStore } from '../../../store/dataStore'
-import { Fade } from 'react-slideshow-image';
+import { Slide, Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 // const images = [
 // 	'https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Y2FzaW5vfGVufDB8fDB8fA%3D%3D&w=1000&q=80',
@@ -75,29 +75,15 @@ export const Detail = () => {
             <div className='w-2/4 h-full relative'>
                 <div className='absolute h-screen w-full bg-gradient-to-t from-slate-900  to-transparent'></div>
                 {/* <img src={announcement?.announcementsMedia[0].pathWeb} alt=""  className='  h-full w-full object-cover ' onLoad={onLoadImgReady}/> */}
-                <Fade cssClass='slider'>
+                <Slide cssClass='slider' >
                 {
                     announcement?.announcementsMedia.map(element=>(
-                        <img key={element.idAnnouncementMedia} src={element.pathWeb} alt=""  className='  h-full w-full object-cover ' onLoad={onLoadImgReady}/>
+                        <img key={element.idAnnouncementMedia} src={element.pathWeb} alt=""  className='  h-full w-full object-contain ' onLoad={onLoadImgReady}/>
                     ))
                 }
-                </Fade>
+                </Slide>
                
-                <div className='w-full left-0 h-32 absolute bottom-0 '>
-                   <a  className="arrow-container left-10">
-                        <div className="arrow"></div>
-                        <div className="arrow"></div>
-                        <div className="arrow"></div>  
-                    </a>
-                    <div className='flex justify-center items-center  w-full h-full'>
-                        <p className='text-white absolute text-2xl '>1/4</p>
-                    </div>
-                    <a  className="arrow-container arrow2  -right-2">
-                        <div className="arrow"></div>
-                        <div className="arrow"></div>
-                        <div className="arrow"></div>  
-                    </a>
-                </div>
+               
                 
 
             </div>

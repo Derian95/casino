@@ -26,7 +26,7 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 						viewport={{ once: true }}
 						transition={{ duration: 3, ease: 'backInOut' }}
 						className='w-full h-full object-cover '
-						src='https://img.freepik.com/vector-gratis/ilustracion-realista-juegos-casino_52683-99917.jpg?w=2000'
+						src='https://images.pexels.com/photos/1796794/pexels-photo-1796794.jpeg?auto=compress&cs=tinysrgb&w=1600'
 						alt=''
 					/>
 				</div>
@@ -57,7 +57,7 @@ export const NewAbout: FC<Props> = ({ containerRef }) => {
 							<p className='text-4xl text-white font-bold  text-[2.625rem ]  pb-5'>
 								MISIÓN
 							</p>
-							<p dangerouslySetInnerHTML={{__html:casinoInfo?.mission!}} className='text-[#DDDDDD] font-normal c bg-red-300 text-[1rem] leading-8'>
+							<p dangerouslySetInnerHTML={{__html:casinoInfo?.mission!}} className='text-[#DDDDDD] font-normal   text-[1rem] leading-8'>
 							</p>
 						</motion.div>
 
